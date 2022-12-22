@@ -1,1 +1,77 @@
-<h1>hello world</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="static\style.css">
+<body>
+  
+ <h1></h1> 
+<br/>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <div class="container">
+        <label for="age">age</label><br>
+        <input type="number" id="age" name="age" placeholder="Age" required="required"><br>
+
+        <label for="sex">sex</label><br/>
+        <select name="sex" id="Sex">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br>
+
+        <label for="chest pain type">chest pain type</label><br/>
+        <select name="chest pain type" id="chest pain type"><br/>
+            <option value="0">type:0</option>
+            <option value="1">type:1</option>
+            <option value="2">type:2</option>
+            <option value="3">type:3</option>
+          </select><br>
+
+        <label for="resting bp s">resting bp s</label><br>
+        <input type="number" id="resting bp s" placeholder="in mm Hg after being admitted to the hospital" name="resting bp s" required="required"><br>
+
+        <label for="cholesterol">cholesterol</label><br>
+        <input type="number" id="cholesterol" placeholder="Serum cholestoral in mg/dl" name="cholesterol" required="required"><br>
+
+        <label for="fasting blood sugar">fasting blood sugar</label><br>
+        <select name="fasting blood sugar" id="fasting blood sugar">
+            <option value="1">1 = signifies a blood sugar level in excess of 120mg/dl</option>
+            <option value="0"> 0 = signifies a blood sugar level lower than 120mg/dl)</option>
+        </select><br>
+        
+        <label for="resting ecg">resting ecg</label><br>
+        <input type="number" id="resting ecg" placeholder="Resting electrocardiographic results" name="resting ecg" required="required"><br>
+
+        <label for="max heart rate">max heart rate</label><br>
+        <input type="number" id="max heart rate" placeholder="The maximum heart rate of an individual using a Thallium Test. Measured in beats per minute." name="max heart rate" required="required"><br>
+
+        <label for="exercise angina">exercise triggered angina</label><br>
+        <select name="exercise angina" id="exercise angina">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="oldpeak">oldpeak</label><br>
+        <input type="number" id="oldpeak" placeholder="depression induced by exercise relative to rest" name="oldpeak" required="required"><br>
+
+        <label for="ST slope">ST slope</label><br>
+        <input type="number" id="ST slope" placeholder="The slope of the peak exercise ST segment" name="ST slope" required="required"><br>
+        <br/>
+        <br/>
+
+        <button type="submit">Predict</button><br>
+
+        
+    </div>
+      </form>
+      <br/>
+      <br/>
+      <br/>
+    {{pred_text}}
+</body>
+</html>

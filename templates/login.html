@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    form {
+        
+        margin: 10%;
+        border: 3px solid #f1f1f1;
+    }
+    
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    .container {
+      padding: 16px;
+    }
+    
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+    </style>
+
+
+<body>
+  <h2>log in page</h2>
+    <form action="/login" method="post">
+    <div class="container">
+    
+        {{ form.hidden_tag() }}<br/>
+
+        <br/>
+        <label for="User"><b>Username</b></label>
+        {{form.email }}
+        
+    </br>
+        <label for="psw"><b>Password</b></label>
+        {{form.password }}
+    </br>
+    </br>
+        <button type="submit">Login</button>
+        <label>
+    </br>
+      </div>
+      <h4>or Signup here  <a href="{{url_for('signup')}}">signup</a></h4>
+    </form>
+ 
+ <h3>{{msg}}</h3>  
+
+</body>
+</html>
